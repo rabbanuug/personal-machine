@@ -1,5 +1,6 @@
 # Core utilities
 git
+gh
 curl
 vim
 unzip
