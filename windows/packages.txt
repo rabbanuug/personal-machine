@@ -1,0 +1,8 @@
+# AI coding tools
+Anthropic.ClaudeCode
+
+# Core utilities
+Git.Git
+jqlang.jq
+Microsoft.WindowsTerminal
+sharkdp.bat

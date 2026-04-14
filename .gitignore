@@ -35,3 +35,45 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Claude Code project-local settings (not dotfiles)
+.claude/
+
+# ── Dotfiles: secrets and machine-specific state ──────────────────────────────
+
+# Claude Code credentials — NEVER commit
+dotfiles/claude/.credentials.json
+**/claude/.credentials.json
+
+# Claude Code: ephemeral and machine-specific state
+dotfiles/claude/backups/
+dotfiles/claude/cache/
+dotfiles/claude/downloads/
+dotfiles/claude/file-history/
+dotfiles/claude/history.jsonl
+dotfiles/claude/mcp-needs-auth-cache.json
+dotfiles/claude/plans/
+dotfiles/claude/projects/
+dotfiles/claude/session-env/
+dotfiles/claude/sessions/
+dotfiles/claude/shell-snapshots/
+
+# Claude plugins: marketplace contents are auto-fetched, only track the registry file
+dotfiles/claude/plugins/marketplaces/
+
+# Git credential helpers write tokens here
+dotfiles/git/.git-credentials
+dotfiles/git/.gitconfig-work
+
+# SSH private keys
+dotfiles/ssh/id_*
+!dotfiles/ssh/*.pub
+!dotfiles/ssh/config.example
+
+# Backup files created by install scripts
+*.bak.*
+
+# Environment files
+.env
+.env.*
+!.env.example
