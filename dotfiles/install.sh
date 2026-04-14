@@ -34,6 +34,9 @@ link "$SCRIPT_DIR/bash/.bashrc"       "$HOME/.bashrc"
 link "$SCRIPT_DIR/bash/.bash_aliases" "$HOME/.bash_aliases"
 link "$SCRIPT_DIR/shell/.profile"     "$HOME/.profile"
 
+mkdir -p "$HOME/.config/environment.d"
+link "$SCRIPT_DIR/environment.d/gnome-keyring.conf" "$HOME/.config/environment.d/gnome-keyring.conf"
+
 echo "Syncing .claude config..."
 bash "$(dirname "$SCRIPT_DIR")/scripts/sync-claude.sh" link
 

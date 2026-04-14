@@ -116,3 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 export PATH="$HOME/.local/bin:$PATH"
+
+# Expose GNOME keyring socket to libsecret consumers (e.g. Claude Code).
+# Needed for non-login shells where .profile is not sourced.
+if [ -z "$GNOME_KEYRING_CONTROL" ] && [ -S "${XDG_RUNTIME_DIR:-/run/user/$UID}/keyring/control" ]; then
+    export GNOME_KEYRING_CONTROL="${XDG_RUNTIME_DIR:-/run/user/$UID}/keyring"
+fi
